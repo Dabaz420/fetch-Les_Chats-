@@ -4,9 +4,10 @@ async function userList(){
     let response = await fetch(url);
     let commits = await response.json();
     let arrayLength = commits.customers.length;
-
+    
+    console.log("Les utilisateurs sont");
     for(let i = 0; i < arrayLength; i++){               
-       console.log("Les utilisateurs sont " commits.customers[i].user_name);
+       console.log(commits.customers[i].user_name);
     }
 }
 
@@ -19,13 +20,14 @@ async function userPets(){
     let commits = await response.json();
     let arrayLength = commits.customers.length;
 
+    console.log("Les animaux par ordre alphabetique");
     for(let i = 0; i < arrayLength; i++){    
         let arrayPetLength = commits.customers[i].user_pets.length;
         for(let x = 0; x < arrayPetLength; x++){          
             arrayPets.push(commits.customers[i].user_pets[x].pet_name);
         }
     }
-    console.log("Les animaux par ordre alphabetique :" arrayPets.sort().join(" "));
+    console.log(arrayPets.sort().join(" "));
 }
 
 userPets(); //Cette fonction affiche la liste des animals dans l'ordre alphabétique
@@ -36,10 +38,11 @@ async function userWithPets(){
     let commits = await response.json();
     let arrayLength = commits.customers.length;
 
+    console.log("Les utilisateurs avec au moins un animal");
     for(let i = 0; i < arrayLength; i++){    
         let arrayPetLength = commits.customers[i].user_pets.length;
         if(arrayPetLength >= 1){
-            console.log("Les utilisateurs avec au moins un animal :" commits.customers[i].user_name)
+            console.log(commits.customers[i].user_name)
         }
     }
 }
@@ -53,10 +56,11 @@ async function addMickey(){
     let arrayLength = commits.customers.length;
     let Mickey = {pet_name: "Mickey", pet_type: "mouse", pet_age: "0,1"};
 
+    console.log("Ajoute un Mickey dans tout les utilisateurs");
     for(let i = 0; i < arrayLength; i++){    
         let arrayPetLength = commits.customers[i].user_pets.length; 
         commits.customers[i].user_pets[arrayPetLength] = Mickey;       
-        console.log("Ajoute un Mickey dans tout les utilisateurs :" commits.customers[i].user_pets);    
+        console.log(commits.customers[i].user_pets);    
     }
 }
 
