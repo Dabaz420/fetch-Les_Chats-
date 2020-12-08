@@ -6,7 +6,7 @@ async function userList(){
     let arrayLength = commits.customers.length;
 
     for(let i = 0; i < arrayLength; i++){               
-       console.log(commits.customers[i].user_name);
+       console.log("Les utilisateurs sont " commits.customers[i].user_name);
     }
 }
 
@@ -25,7 +25,7 @@ async function userPets(){
             arrayPets.push(commits.customers[i].user_pets[x].pet_name);
         }
     }
-    console.log(arrayPets.sort().join(" "));
+    console.log("Les animaux par ordre alphabetique :" arrayPets.sort().join(" "));
 }
 
 userPets(); //Cette fonction affiche la liste des animals dans l'ordre alphabétique
@@ -39,7 +39,7 @@ async function userWithPets(){
     for(let i = 0; i < arrayLength; i++){    
         let arrayPetLength = commits.customers[i].user_pets.length;
         if(arrayPetLength >= 1){
-            console.log(commits.customers[i].user_name)
+            console.log("Les utilisateurs avec au moins un animal :" commits.customers[i].user_name)
         }
     }
 }
@@ -56,7 +56,7 @@ async function addMickey(){
     for(let i = 0; i < arrayLength; i++){    
         let arrayPetLength = commits.customers[i].user_pets.length; 
         commits.customers[i].user_pets[arrayPetLength] = Mickey;       
-        console.log(commits.customers[i].user_pets);    
+        console.log("Ajoute un Mickey dans tout les utilisateurs :" commits.customers[i].user_pets);    
     }
 }
 
