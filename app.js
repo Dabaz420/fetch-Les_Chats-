@@ -10,7 +10,7 @@ async function userList(){
     }
 }
 
-//userList(); //Cette fonction affiche la liste des utilisateur dans la console
+userList(); //Cette fonction affiche la liste des utilisateur dans la console
 
 async function userPets(){
     let arrayPets = [];
@@ -28,7 +28,7 @@ async function userPets(){
     console.log(arrayPets.sort().join(" "));
 }
 
-//userPets(); //Cette fonction affiche la liste des animals dans l'ordre alphabétique
+userPets(); //Cette fonction affiche la liste des animals dans l'ordre alphabétique
 
 async function userWithPets(){
     let url = "users.json";
@@ -44,7 +44,7 @@ async function userWithPets(){
     }
 }
 
-//userWithPets();  //Cette fonction affiche la des utilisateurs avec au moins un animal
+userWithPets();  //Cette fonction affiche la des utilisateurs avec au moins un animal
 
 async function addMickey(){
     let url = "users.json";
@@ -60,7 +60,7 @@ async function addMickey(){
     }
 }
 
-//addMickey(); //Cette fonction ajoute une souris Mickey à chaqun des utilisateurs
+addMickey(); //Cette fonction ajoute une souris Mickey à chaqun des utilisateurs
 
 
 var request = new XMLHttpRequest()
@@ -72,4 +72,4 @@ request.onload = function () {
     })
 }
 
-//request.send()
+request.send() //Les facts sur les poti chats
